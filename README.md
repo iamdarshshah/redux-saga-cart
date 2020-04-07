@@ -21,7 +21,7 @@ While running and studying this project is useful to anyone, it is strongly reco
 1. Clone and install the server application
 
 2. Clone and install the application
-   `git@github.com:danielstern/redux-saga-cart.git && cd redux-saga-cart && npm install`
+   `https://github.com/iamdarshshah/redux-saga-cart.git && cd redux-saga-cart && npm install`
 
 3. Install the babel CLI
    `npm install -g babel babel-cli`
