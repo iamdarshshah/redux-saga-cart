@@ -1,5 +1,5 @@
-const webpack = require('webpack');
-const path = require('path');
+const webpack = require("webpack");
+const path = require("path");
 
 module.exports = {
   module: {
@@ -8,14 +8,17 @@ module.exports = {
         test: /(\.js|\.jsx)/,
         exclude: /(node_modules|bower_components)/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: [['@babel/preset-env', { useBuiltIns: 'entry', corejs: 2 }], '@babel/preset-react'],
-            plugins: ['@babel/plugin-proposal-object-rest-spread']
-          }
-        }
-      }
-    ]
+            presets: [
+              ["@babel/preset-env", { useBuiltIns: "entry", corejs: 2 }],
+              "@babel/preset-react",
+            ],
+            plugins: ["@babel/plugin-proposal-object-rest-spread"],
+          },
+        },
+      },
+    ],
     // loaders: [
     //   {
     //     loader: 'babel-loader',
@@ -32,22 +35,23 @@ module.exports = {
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     // Use NoErrorsPlugin for webpack 1.x
-    new webpack.NoEmitOnErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin(),
   ],
   entry: {
     index: [
-      '@babel/polyfill',
-      'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true',
-      './'
-    ]
+      "@babel/polyfill",
+      "webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true",
+      "./",
+    ],
   },
   output: {
-    path: path.resolve(__dirname, 'public'),
-    publicPath: '/assets',
-    filename: '[name].bundle.js'
+    path: path.resolve(__dirname, "public"),
+    publicPath: "/assets",
+    filename: "[name].bundle.js",
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: [".js", ".jsx"],
   },
-  devtool: 'source-map'
+  devtool: "source-map",
+  mode: "development",
 };
